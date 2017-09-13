@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head charaset="utf-8">
+  <meta name="description" content="resume all-stack software-PM">
+  <meta name="viewport" content="width=device-width">
+    <title>王文洲的简历页面</title>
+    <link rel='stylesheet' href='bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='stylesheets/header.css' />
+    <link rel='stylesheet' href='stylesheets/main.css' />
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel='stylesheet' href='font-awesome/css/font-awesome.min.css' />
+    
+  </head>
+  <body>
+    <% include header.ejs%>
+    <div class="container">
+      <div class="resume-wrapper">
+        <div class="resume">
+          <% include about.ejs %>
+          <% include skill.ejs %>
+          <% include project.ejs %>
+          <% include employment.ejs %>
+          <% include education.ejs %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

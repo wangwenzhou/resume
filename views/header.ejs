@@ -1,0 +1,105 @@
+	<div class="container">
+		<div class="cbp-af-header">
+			<div class="cbp-af-inner">
+            	<div class="wrap">
+           		 	 <h1>Resume</h1>          	
+            	</div>	
+            	<nav>
+					<a id="bt1" href="#">求职目标</a>
+					<a id="bt2" href="#">个人能力</a>
+					<a id="bt3" href="#">项目经历</a>
+					<a id="bt4" href="#">工作经验</a>
+					<a id="bt5" href="#">教育学历</a>
+				</nav>	
+            </div>	
+        </div>
+	</div>
+	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>	
+	<script type="text/javascript" src="jquery.scrollTo/jquery.scrollTo.min.js"></script>
+	<script type="text/javascript">
+	    $(function(){
+            $("#bt1").click(function () {$.scrollTo('#about', 500, {offset:-230});});
+            $("#bt2").click(function () {$.scrollTo('#skill', 500, {offset:-90});});
+            $("#bt3").click(function () {$.scrollTo('#project', 500, {offset:-90});});
+            $("#bt4").click(function () {$.scrollTo('#employment', 500, {offset:-90});});
+			$("#bt5").click(function () {$.scrollTo('#education', 500, {offset:-90});});
+		});
+		
+	var cbpAnimatedHeader = (function() {
+		var b = document.documentElement,
+			g = document.querySelector(".cbp-af-header"),
+			e = false,
+			a = 230;
+		function f() {
+			window.addEventListener("scroll",
+				function(h) {
+					if (!e) {
+						e = true;
+						setTimeout(d, 250)
+					}
+				},
+				false)
+		}
+		function d() {
+			var h = c();
+			if (h >= a) {
+				classie.add(g, "cbp-af-header-shrink")
+			} else {
+				classie.remove(g, "cbp-af-header-shrink")
+			}
+			e = false
+		}
+		function c() {
+			return window.pageYOffset || b.scrollTop
+		}f()
+	})();
+	(function(window) {
+		'use strict';
+		function classReg(className) {
+			return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+		}
+		var hasClass, addClass, removeClass;
+		if ('classList' in document.documentElement) {
+			hasClass = function(elem, c) {
+				return elem.classList.contains(c);
+			};
+			addClass = function(elem, c) {
+				elem.classList.add(c);
+			};
+			removeClass = function(elem, c) {
+				elem.classList.remove(c);
+			};
+		} else {
+			hasClass = function(elem, c) {
+				return classReg(c).test(elem.className);
+			};
+			addClass = function(elem, c) {
+				if (!hasClass(elem, c)) {
+					elem.className = elem.className + ' ' + c;
+				}
+			};
+			removeClass = function(elem, c) {
+				elem.className = elem.className.replace(classReg(c), ' ');
+			};
+		}
+		function toggleClass(elem, c) {
+			var fn = hasClass(elem, c) ? removeClass: addClass;
+			fn(elem, c);
+		}
+		var classie = {
+			hasClass: hasClass,
+			addClass: addClass,
+			removeClass: removeClass,
+			toggleClass: toggleClass,
+			has: hasClass,
+			add: addClass,
+			remove: removeClass,
+			toggle: toggleClass
+		};
+		if (typeof define === 'function' && define.amd) {
+			define(classie);
+		} else {
+			window.classie = classie;
+		}
+	})(window);
+	</script>
